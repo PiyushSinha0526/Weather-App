@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="main.css" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <div class="top">
+          <h1>Weather app</h1>
+          <form>
+            <!-- <label for="city">Enter a location for weather information</label> -->
+            <input
+              placeholder="Enter a City name ...."
+              type="text"
+              name="city"
+              class="form-input"
+            />
+          </form>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="show hide">
+          <h2 class="city__name">Shitty</h2>
+          <div class="main">
+            <div class="main__primary-info">
+              <div class="icon">
+                <img src="./img/1.png" alt="NotFound" />
+              </div>
+              <div class="temp">
+                <span>0.0</span>
+                <span>&deg;C</span>
+                <span class="icon_info">****</span>
+              </div>
+            </div>
+            <div class="main__secondary-info">
+              <div>
+                <span class="name">Wind</span>
+                <span class="values"
+                  ><span class="numValue">---</span> km/h</span
+                >
+              </div>
+              <div>
+                <span class="name">Humidity</span>
+                <span class="values"><span class="numValue">---</span>%</span>
+              </div>
+              <div>
+                <span class="name">Feels Like</span>
+                <span class="values"
+                  ><span class="numValue">---</span>&deg;</span
+                >
+              </div>
+              <div>
+                <span class="name">Pressure</span>
+                <span class="values"
+                  ><span class="numValue">---</span> mBar</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
