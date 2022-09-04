@@ -2,13 +2,13 @@
 const API_KEY = `dd4cd0a5345222cbde38d1f8bc8c22d5`;
 
 const location = async (CityName) => {
-    const data = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${CityName}&limit=5&appid=${API_KEY}`);
+    const data = await fetch(`//api.openweathermap.org/geo/1.0/direct?q=${CityName}&limit=5&appid=${API_KEY}`);
     
     return data;
 }
 
 const information = async (lat, lon) => {
-    const data = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}`)
+    const data = await fetch(`//api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}`)
     
     return data;
 }
