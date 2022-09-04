@@ -1,21 +1,34 @@
  // ! Add API key here
-const API_KEY = `f67c50c0f8c8d9df2bf582b3bfc26484`;
+const API_KEY = `dd4cd0a5345222cbde38d1f8bc8c22d5`;
 
-const information = async (CityName) => {
-    const data = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${CityName}&appid=${API_KEY}`);
+const location = async (CityName) => {
+    const data = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${CityName}&limit=5&appid=${API_KEY}`);
     
     return data;
 }
 
-// Todo: get City Details
+const information = async (lat, lon) => {
+    const data = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}`)
+    
+    return data;
+}
+
 export const getCityDetails = async (cityName) => {
-    
-    const response = await information(cityName)
-    
-    if(response.status !== 200){
+    // request latitude and longitude
+    const locationData = await location(cityName)
+    if(locationData.status !== 200){
         throw new Error();
     }
+    const jsonLocationData = await locationData.json()
+    const {lon, lat} = jsonLocationData[0]
+    
+    // request actual data using latitude and longitude
+    const res = await information(lat, lon)
+    if(res.status !== 200){
+        throw new Error();
+    }
+    const data = await res.json()
 
-    const data = await response.json()
+
     return data;
 }
