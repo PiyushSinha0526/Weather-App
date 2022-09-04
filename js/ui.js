@@ -18,7 +18,7 @@ export const updateUI = (data, cityName) => {
   city.innerHTML = cityName;
 
   // + icon
-  const iconSrc = `http://openweathermap.org/img/wn/${icon}@2x.png`;
+  const iconSrc = `//openweathermap.org/img/wn/${icon}@2x.png`;
   changeIcon.setAttribute("src", iconSrc);
 
   // + icon primary Details
